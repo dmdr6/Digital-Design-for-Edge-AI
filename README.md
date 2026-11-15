@@ -5,33 +5,6 @@ This project documents a structured progression from digital hardware fundamenta
 
 ---
 
-## 📁 Repository Structure
-TinyML--EmbeddedAI/
-
-├── MCU-Projects/
-
-│   └── Arduino-Nano-33-BLE-Rev2/
-
-│       ├── Project-1-IMU-Motion-Data-Logger/
-
-│       └── Project-2-Real-Time-Signal-Processing-System/
-
-├── SystemVerilog_Progress/
-
-│   ├── Logic_Gates/
-
-│   ├── Combinational-Blocks/
-
-│   └── Sequential-Logic/
-
-└── TinyML-Engineering-Roadmap/
-
-└── Machine-Learning/
-
-└── 01-Sensor-Data-Collector/
-
----
-
 ## 🔧 MCU Projects (Arduino Nano 33 BLE Rev2)
 
 Target board: **Arduino Nano 33 BLE Rev2** (nRF52840 + BMI270 IMU).
