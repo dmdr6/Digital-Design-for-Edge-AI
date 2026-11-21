@@ -2,13 +2,13 @@
 
 module tb_ff_async_rst;
   
-  // Testbench driver signals
+  // 1. Testbench driver signals
   logic clk_sig;
   logic rst_n_sig;
   logic d_sig;
   logic q_sig;
   
-  // Instantiate the Flip-Flop with Asynchronous Reset (DUT)
+  // 2. Instantiate the Flip-Flop with Asynchronous Reset (DUT)
   ff_async_rst uut (
     .clk(clk_sig),
     .rst_n(rst_n_sig),
@@ -16,13 +16,13 @@ module tb_ff_async_rst;
     .q(q_sig)
   );
   
-  // Clock generation: 10 ns period
+  // 3. Clock generation: 10 ns period
   initial begin
     clk_sig = 0;
     forever #5 clk_sig = ~clk_sig;
   end
   
-  // Test sequence
+  // 4. Test sequence
   initial begin
     
     // Initialize inputs
