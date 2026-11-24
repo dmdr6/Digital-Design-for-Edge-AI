@@ -8,7 +8,7 @@ module tb_mux_2to1;
   // 2. Testbench Monitors: Declare output as wire to observe the module's output
   wire y_wire;
   
-  // 3. Instantiate the Device Under Test (UUT)
+  // 3. Instantiate the 2-to-1 MUX (DUT)
   mux_2to1 uut (
     .a(a_reg),
     .b(b_reg),
@@ -16,19 +16,23 @@ module tb_mux_2to1;
     .y(y_wire)
   );
   
-  // 4. Initialize stimulus process
+  // 4. Initialize the stimulus process
   initial begin
-    // Display header for simulation log
-    $display("Time\t sel\t a\t b\t | y");
-    $monitor("%0t\t %b\t %b\t %b\t | %b", $time, sel, a, b, y);
+    
+    // Print headers
+    $display("Time   sel   a   b   | y");
+    $display("-----------------------");
+    
+    // Use format specifiers (%-5d, %-3b, %-1b) to lock column widths
+	$monitor("%-5d  %-3b   %-1b   %-1b   | %b", $time, sel_reg, a_reg, b_reg, y_wire);
     
     // Test all combinations of inputs and select lines
-    a = 0; b = 0; sel = 0; #10; // y should be 0
-    a = 1; b = 0; sel = 0; #10; // y should be 1 (a)
-    a = 0; b = 1; sel = 0; #10; // y should be 0 (a)
-    a = 0; b = 0; sel = 1; #10; // y should be 0 (b)
-    a = 0; b = 1; sel = 1; #10; // y should be 1 (b)
-    a = 1; b = 1; sel = 1; #10; // y should be 1 (b)
+    a_reg = 0; b_reg = 0; sel_reg = 0; #10; // y should be 0
+    a_reg = 1; b_reg = 0; sel_reg = 0; #10; // y should be 1 (a)
+    a_reg = 0; b_reg = 1; sel_reg = 0; #10; // y should be 0 (a)
+    a_reg = 0; b_reg = 0; sel_reg = 1; #10; // y should be 0 (b)
+    a_reg = 0; b_reg = 1; sel_reg = 1; #10; // y should be 1 (b)
+    a_reg = 1; b_reg = 1; sel_reg = 1; #10; // y should be 1 (b)
     
     $finish;
   end
