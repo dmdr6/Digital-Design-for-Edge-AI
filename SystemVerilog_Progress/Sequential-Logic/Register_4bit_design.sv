@@ -3,8 +3,8 @@
 module register_4bit (
   input logic 		 clk,	// Clock signal
   input logic 		 en,	// Enable signal
-  input logic [3:0]  d,		// 4-bit input data
-  output logic [3:0] q		// 4-bit output data
+  input logic [3:0]  d,		// 4-bit data input
+  output logic [3:0] q		// 4-bit data output
 );
   
   // Executes on every rising edge of the clock
