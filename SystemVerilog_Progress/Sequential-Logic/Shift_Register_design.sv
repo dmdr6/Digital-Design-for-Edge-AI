@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 
-module shift_register_sipo (
-  input logic		 clk,		// Clock signal
-  input logic		 serial_in,	// 1-bit serial data input
-  output logic [3:0] q,			// 4-bit parallel data output
+module sipo_shift_register (
+  input logic 		 clk,			// Clock signal
+  input logic 		 serial_in,		// 1-bit serial data input
+  output logic [3:0] q				// 4-bit parallel data output
 );
   
   // Executes on every rising edge of the clock
@@ -15,4 +15,3 @@ module shift_register_sipo (
   end
   
 endmodule
-
